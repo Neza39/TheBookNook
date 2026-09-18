@@ -206,14 +206,19 @@ section {
 .klub {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1.5rem;
     background-color: var(--lilac);
     padding: 2.5rem 1.5rem;
 }
 
+.klub-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .klub .btn {
     align-self: center;
-    margin-top: 1rem;
 }
 
 .btn-light {
@@ -289,4 +294,91 @@ footer {
 .footer-icons svg {
     width: 28px;
     height: 28px;
+}
+
+
+/* ==========================================================
+   DESKTOP
+   ========================================================== */
+
+@media (min-width: 900px) {
+
+    :root {
+        --gap: 6rem;
+    }
+
+    section,
+    footer {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .klub,
+    .lookbook {
+        max-width: none;
+    }
+
+    .klub {
+        padding-left: max(1.5rem, (100% - 1100px) / 2 + 1.5rem);
+        padding-right: max(1.5rem, (100% - 1100px) / 2 + 1.5rem);
+    }
+
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+
+    .lookbook img {
+        display: none;
+    }
+
+    .lookbook {
+        background-image: url('assetsTBN/foto-lookbook.webp');
+        background-repeat: repeat-x;
+        background-size: 33.3333% 100%;
+        aspect-ratio: 3300 / 821;
+    }
+
+    .pakke-card {
+        display: flex;
+    }
+
+    .pakke-card img {
+        width: 50%;
+        object-fit: cover;
+    }
+
+    .pakke-info {
+        width: 50%;
+        justify-content: center;
+    }
+
+    .klub {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .klub-text {
+        flex: 1;
+    }
+
+    footer {
+        display: flex;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .footer-brand {
+        margin-bottom: 0;
+    }
+
+    .footer-cols {
+        flex: 1;
+        gap: 4rem;
+    }
+
+    .hero-title img { max-width: 520px; }
+    .hero-bag { max-width: 320px; }
+    .hero-tagline { font-size: 1.75rem; }
+    .value { font-size: 1rem; }
 }
