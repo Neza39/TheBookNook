@@ -185,6 +185,9 @@ section {
     text-align: center;
     text-decoration: none;
     box-shadow: var(--shadow);
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
     transition: background-color 0.15s;
 }
 
@@ -298,6 +301,109 @@ footer {
 
 
 /* ==========================================================
+   DESIGNER
+   ========================================================== */
+
+.designer {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    border: none;
+    padding: 1.5rem;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+}
+
+.designer::backdrop {
+    background-color: rgb(88 67 64 / 60%);
+}
+
+.designer-close {
+    border: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.designer-trin {
+    text-align: center;
+}
+
+.designer-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.75rem 0 1.5rem;
+}
+
+.designer-bar span {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--pink);
+}
+
+.designer-bar span.aktiv {
+    background-color: var(--rose);
+}
+
+.designer-titel,
+.designer-sub {
+    text-align: center;
+    max-width: none;
+}
+
+.designer-sub {
+    margin-bottom: 1.5rem;
+}
+
+.designer-foto {
+    max-height: 38vh;
+    margin: 0 auto 1.5rem;
+}
+
+.designer-spg {
+    margin-bottom: 0.5rem;
+}
+
+.designer-valg {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.swatch {
+    width: 72px;
+    height: 72px;
+    padding: 0.25rem;
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    background-color: var(--bg);
+    cursor: pointer;
+}
+
+.swatch.valgt {
+    border-color: var(--rose);
+}
+
+.swatch img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.designer-naeste {
+    width: 100%;
+}
+
+
+/* ==========================================================
    DESKTOP
    ========================================================== */
 
@@ -375,6 +481,37 @@ footer {
     .footer-cols {
         flex: 1;
         gap: 4rem;
+    }
+
+    .designer-main {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .designer-foto {
+        flex: 1;
+        max-height: 320px;
+        margin: 0;
+    }
+
+    .designer-valgene {
+        flex: 1;
+    }
+
+    .designer-valg {
+        margin-bottom: 1.5rem;
+    }
+
+    .designer {
+        width: min(760px, 90vw);
+        height: auto;
+        max-height: 85vh;
+        margin: auto;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: var(--shadow);
+        overflow-y: auto;
     }
 
     .hero-title img { max-width: 520px; }
