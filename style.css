@@ -221,3 +221,72 @@ section {
     color: var(--rose);
     border: 2px solid var(--rose);
 }
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer {
+    padding: 2rem 1.5rem 2.5rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    width: 56px;
+}
+
+.footer-wordmark {
+    width: 170px;
+}
+
+.footer-cols {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-cols > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tegner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.tegner img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.tegner span {
+    white-space: nowrap;
+    font-size: 0.85rem;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-icons a {
+    display: block;
+    color: var(--text);
+}
+
+.footer-icons svg {
+    width: 28px;
+    height: 28px;
+}
