@@ -7,9 +7,12 @@
     --peri:    #BABAF0;
     --sand:    #E8D9CC;
     --rose:    #C4888E;
+    --rose-dark: #A77479;
     --text:    #584340;
 
     --gap:     4rem;
+
+    --shadow:  3px 5px 6px rgb(88 67 64 / 45%);
 
     --overlay: rgb(186 186 240 / 45%);
     --font:    'Alegreya', Georgia, serif;
@@ -134,4 +137,63 @@ section {
 
 .lookbook img {
     width: 100%;
+}
+
+
+/* ==========================================================
+   PAKKE
+   ========================================================== */
+
+.pakke-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.pakke-card img {
+    width: 100%;
+}
+
+.pakke-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: var(--pink);
+    padding: 1.5rem;
+}
+
+.pakke-label {
+    color: var(--rose);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.pakke-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.btn {
+    display: block;
+    background-color: var(--rose);
+    color: var(--bg);
+    padding: 0.85rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: background-color 0.15s;
+}
+
+.btn:hover {
+    background-color: var(--rose-dark);
+}
+
+.btn:active {
+    background-color: var(--rose-dark);
+    transform: translateY(2px);
+    box-shadow: 1px 2px 4px rgb(88 67 64 / 45%);
 }
