@@ -162,7 +162,7 @@ section {
     padding: 1.5rem;
 }
 
-.pakke-label {
+.label {
     color: var(--rose);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -196,4 +196,28 @@ section {
     background-color: var(--rose-dark);
     transform: translateY(2px);
     box-shadow: 1px 2px 4px rgb(88 67 64 / 45%);
+}
+
+
+/* ==========================================================
+   KLUB
+   ========================================================== */
+
+.klub {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: var(--lilac);
+    padding: 2.5rem 1.5rem;
+}
+
+.klub .btn {
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.btn-light {
+    background-color: var(--bg);
+    color: var(--rose);
+    border: 2px solid var(--rose);
 }
