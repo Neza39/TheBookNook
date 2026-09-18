@@ -9,6 +9,8 @@
     --rose:    #C4888E;
     --text:    #584340;
 
+    --gap:     4rem;
+
     --overlay: rgb(186 186 240 / 45%);
     --font:    'Alegreya', Georgia, serif;
 }
@@ -58,6 +60,11 @@ img {
     display: block;
 }
 
+section {
+    padding: 0 1.5rem;
+    margin-bottom: var(--gap);
+}
+
 
 /* ==========================================================
    PHONE
@@ -72,11 +79,9 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     text-align: center;
     gap: 1.5rem;
-    min-height: 100vh;
-    padding: 4rem 1.5rem 2rem;
+    padding-top: 3rem;
 }
 
 .hero-title img {
@@ -91,4 +96,42 @@ img {
 
 .hero-tagline {
     font-size: 1.5rem;
+}
+
+
+/* ==========================================================
+   VALUES
+   ========================================================== */
+
+.values {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.value {
+    flex: 1;
+    background-color: var(--bg);
+    color: var(--rose);
+    border-radius: 1rem;
+    padding: 1.25rem 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   LOOKBOOK
+   ========================================================== */
+
+.lookbook {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.lookbook img {
+    width: 100%;
 }
