@@ -39,12 +39,12 @@ function draw() {
         step === 2 ? 'Læg i kurv' : 'Næste';
 }
 
-dialog.addEventListener('click', e => {
-    const btn = e.target.closest('.swatch');
-    if (!btn) return;
-    const type = btn.closest('.designer-choice').dataset.choice;
-    choices[PRODUCTS[step].key][type] = btn.dataset.value;
-    draw();
+dialog.querySelectorAll('.swatch').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const type = btn.closest('.designer-choice').dataset.choice;
+        choices[PRODUCTS[step].key][type] = btn.dataset.value;
+        draw();
+    });
 });
 
 dialog.querySelector('.designer-next').addEventListener('click', () => {
@@ -81,4 +81,58 @@ document.querySelector('[data-open="designer"]').addEventListener('click', () =>
 
 dialog.querySelector('.designer-close').addEventListener('click', () => {
     dialog.close();
+});
+
+
+/* ---------------------------------------------------------
+   BOOK CLUB
+   --------------------------------------------------------- */
+
+const bookclub = document.getElementById('bookclub');
+
+document.querySelector('[data-open="bookclub"]').addEventListener('click', () => {
+    bookclub.querySelector('.bookclub-books').hidden = false;
+    bookclub.querySelector('.bookclub-review').hidden = true;
+    bookclub.querySelector('.bookclub-reward').hidden = true;
+
+    rating = 0;
+    stars.forEach(s => { s.textContent = '☆'; });
+    bookclub.querySelector('.review-text').value = '';
+
+    bookclub.showModal();
+});
+
+bookclub.querySelector('.bookclub-close').addEventListener('click', () => {
+    bookclub.close();
+});
+
+bookclub.querySelectorAll('.book').forEach(card => {
+    card.addEventListener('click', () => {
+        const which = bookclub.querySelector('.which-book');
+        which.querySelector('img').src = card.querySelector('img').src;
+        which.querySelector('span').textContent = card.querySelector('.book-title').textContent;
+
+        bookclub.querySelector('.bookclub-books').hidden = true;
+        bookclub.querySelector('.bookclub-review').hidden = false;
+    });
+});
+
+let rating = 0;
+
+const stars = bookclub.querySelectorAll('.star');
+
+stars.forEach((star, i) => {
+    star.addEventListener('click', () => {
+        rating = i + 1;
+
+        stars.forEach((s, j) => {
+            s.textContent = j < rating ? '★' : '☆';
+        });
+    });
+});
+
+bookclub.querySelector('.review-form').addEventListener('submit', e => {
+    e.preventDefault();
+    bookclub.querySelector('.bookclub-review').hidden = true;
+    bookclub.querySelector('.bookclub-reward').hidden = false;
 });

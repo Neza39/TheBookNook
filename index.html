@@ -61,7 +61,7 @@
             <p>Gratis, i høj opløsning og klar til væggen. Nyt tryk den 1. i hver måned.</p>
         </div>
 
-        <a class="btn btn-light" href="#">Læs med</a>
+        <button class="btn btn-light" data-open="bookclub">Læs med</button>
     </section>
 
     <footer>
@@ -190,6 +190,90 @@
             </div>
 
             <p class="final-note">Vi tegner og trykker alt på bestilling, så der går et par uger. Afhentning eller levering aftaler vi på mail.</p>
+        </div>
+    </dialog>
+
+    <dialog id="bookclub" class="bookclub">
+        <button class="bookclub-close" aria-label="Luk">&times;</button>
+
+        <p class="label">September</p>
+
+        <div class="bookclub-books">
+            <h2>Månedens bøger</h2>
+
+            <p>Har du læst en af dem?</p>
+
+            <p>Så vil vi gerne høre hvad du synes. Vælg din bog, skriv et par ord, og få månedens tryk gratis.</p>
+
+            <div class="book-list">
+                <button class="book" data-book="fourth-wing">
+                    <img src="assetsTBN/bog-fourth-wing.webp" alt="">
+                    <span class="book-info">
+                        <span class="book-title">Fourth Wing</span>
+                        <span class="book-author">Rebecca Yarros</span>
+                        <span class="book-note">Drager, krigsskole og alt for lidt søvn.</span>
+                    </span>
+                </button>
+
+                <button class="book" data-book="piranesi">
+                    <img src="assetsTBN/bog-piranesi.webp" alt="">
+                    <span class="book-info">
+                        <span class="book-title">Piranesi</span>
+                        <span class="book-author">Susanna Clarke</span>
+                        <span class="book-note">Et hus uden ende. Læs den langsomt.</span>
+                    </span>
+                </button>
+
+                <button class="book" data-book="priory">
+                    <img src="assetsTBN/bog-priory.webp" alt="">
+                    <span class="book-info">
+                        <span class="book-title">The Priory of the Orange Tree</span>
+                        <span class="book-author">Samantha Shannon</span>
+                        <span class="book-note">800 sider. Tag hoodien på.</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="bookclub-review" hidden>
+
+            <div class="which-book">
+                <img src="" alt="">
+                <span></span>
+            </div>
+
+            <h2>Hvad synes du?</h2>
+
+            <form class="review-form">
+                <div class="stars">
+                    <button type="button" class="star" aria-label="1 stjerne">☆</button>
+                    <button type="button" class="star" aria-label="2 stjerner">☆</button>
+                    <button type="button" class="star" aria-label="3 stjerner">☆</button>
+                    <button type="button" class="star" aria-label="4 stjerner">☆</button>
+                    <button type="button" class="star" aria-label="5 stjerner">☆</button>
+                </div>
+
+                <textarea class="review-text" rows="5" placeholder="Tekst..." required></textarea>
+
+                <button class="btn" type="submit">Send anmeldelse</button>
+            </form>
+        </div>
+
+        <div class="bookclub-reward" hidden>
+
+            <img class="reward-confetti" src="assetsTBN/konfetti.webp" alt="">
+
+            <img class="reward-image" src="assetsTBN/tryk-september.webp" alt="Månedens tryk, tegnet af Maya">
+
+            <p class="label">Tak for din anmeldelse</p>
+
+            <h2>Trykket er dit</h2>
+
+            <p>Tegnet af Maya</p>
+
+            <p class="final-note">Print det selv og hæng det op. Nyt tryk den 1. oktober.</p>
+
+            <a class="btn" href="assetsTBN/tryk-september-full.jpg" download="the-book-nook-september.jpg">Hent dit tryk</a>
         </div>
     </dialog>
 
