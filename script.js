@@ -1,62 +1,81 @@
-const TRIN = [
-    { key: 'hoodie',    titel: 'Læsehoodie', sub: 'Én størrelse · Genanvendt fleece' },
-    { key: 'mulepose',  titel: 'Mulepose',   sub: 'Kraftig bomuld' },
-    { key: 'bogmaerke', titel: 'Bogmærke',   sub: 'Tykt karton · Med kvast' }
+const PRODUCTS = [
+    { key: 'hoodie',    title: 'Læsehoodie', sub: 'Én størrelse · Genanvendt fleece' },
+    { key: 'mulepose',  title: 'Mulepose',   sub: 'Kraftig bomuld' },
+    { key: 'bogmaerke', title: 'Bogmærke',   sub: 'Tykt karton · Med kvast' }
 ];
 
-const valg = {
-    hoodie:    { farve: 'sand', tegning: 'drage' },
-    mulepose:  { farve: 'sand', tegning: 'drage' },
-    bogmaerke: { farve: 'sand', tegning: 'drage' }
+const choices = {
+    hoodie:    { color: 'sand', motif: 'drage' },
+    mulepose:  { color: 'sand', motif: 'drage' },
+    bogmaerke: { color: 'sand', motif: 'drage' }
 };
 
-let trin = 0;
+let step = 0;
 
 const dialog = document.getElementById('designer');
-const foto = dialog.querySelector('.designer-foto');
+const photo = dialog.querySelector('.designer-photo');
 
-function tegn() {
-    const t = TRIN[trin];
-    const v = valg[t.key];
+function draw() {
+    const p = PRODUCTS[step];
+    const c = choices[p.key];
 
-    dialog.querySelector('.designer-trin').textContent = `Trin ${trin + 1} af 3`;
-    dialog.querySelector('.designer-titel').textContent = t.titel;
-    dialog.querySelector('.designer-sub').textContent = t.sub;
+    dialog.querySelector('.designer-step').textContent = `Trin ${step + 1} af 3`;
+    dialog.querySelector('.designer-title').textContent = p.title;
+    dialog.querySelector('.designer-sub').textContent = p.sub;
 
-    foto.src = `assetsTBN/${t.key}-${v.farve}-${v.tegning}.webp`;
-    foto.alt = `${t.titel} i ${v.farve} med ${v.tegning}`;
+    photo.src = `assetsTBN/${p.key}-${c.color}-${c.motif}.webp`;
+    photo.alt = `${p.title} i ${c.color} med ${c.motif}`;
 
     dialog.querySelectorAll('.swatch').forEach(b => {
-        const type = b.closest('.designer-valg').dataset.valg;
-        b.classList.toggle('valgt', v[type] === b.dataset.vaerdi);
+        const type = b.closest('.designer-choice').dataset.choice;
+        b.classList.toggle('selected', c[type] === b.dataset.value);
     });
 
     dialog.querySelectorAll('.designer-bar span').forEach((s, i) => {
-        s.classList.toggle('aktiv', i <= trin);
+        s.classList.toggle('active', i <= step);
     });
 
-    dialog.querySelector('.designer-naeste').textContent =
-        trin === 2 ? 'Læg i kurv' : 'Næste';
+    dialog.querySelector('.designer-next').textContent =
+        step === 2 ? 'Læg i kurv' : 'Næste';
 }
 
 dialog.addEventListener('click', e => {
-    const knap = e.target.closest('.swatch');
-    if (!knap) return;
-    const type = knap.closest('.designer-valg').dataset.valg;
-    valg[TRIN[trin].key][type] = knap.dataset.vaerdi;
-    tegn();
+    const btn = e.target.closest('.swatch');
+    if (!btn) return;
+    const type = btn.closest('.designer-choice').dataset.choice;
+    choices[PRODUCTS[step].key][type] = btn.dataset.value;
+    draw();
 });
 
-dialog.querySelector('.designer-naeste').addEventListener('click', () => {
-    if (trin < 2) {
-        trin++;
-        tegn();
+dialog.querySelector('.designer-next').addEventListener('click', () => {
+    if (step < 2) {
+        step++;
+        draw();
+    } else {
+        dialog.querySelector('.designer-steps').hidden = true;
+        dialog.querySelector('.designer-final').hidden = false;
     }
 });
 
+dialog.querySelector('.email-form').addEventListener('submit', e => {
+    e.preventDefault();
+    dialog.querySelector('.email-form').hidden = true;
+    dialog.querySelector('.email-thanks').hidden = false;
+});
+
 document.querySelector('[data-open="designer"]').addEventListener('click', () => {
-    trin = 0;
-    tegn();
+    step = 0;
+
+    PRODUCTS.forEach(p => {
+        choices[p.key] = { color: 'sand', motif: 'drage' };
+    });
+
+    dialog.querySelector('.designer-steps').hidden = false;
+    dialog.querySelector('.designer-final').hidden = true;
+    dialog.querySelector('.email-form').hidden = false;
+    dialog.querySelector('.email-thanks').hidden = true;
+
+    draw();
     dialog.showModal();
 });
 

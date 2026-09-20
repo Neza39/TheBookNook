@@ -34,18 +34,18 @@
         <img src="assetsTBN/foto-lookbook.webp" alt="Tre personer i hoodies med svampe-, drage- og sværdmotiv, hver med en mulepose">
     </section>
 
-    <section class="pakke">
+    <section class="package">
 
-        <article class="pakke-card">
+        <article class="package-card">
 
             <img src="assetsTBN/foto-pakke.webp" alt="Læsekrogen: hoodie, mulepose og bogmærke">
 
-            <div class="pakke-info">
+            <div class="package-info">
                 <p class="label">Pakke</p>
                 <h2>Læsekrogen</h2>
                 <p>Læsehoodie i én størrelse · Mulepose · Bogmærke</p>
                 <p>Du vælger farve og tegning til hver del.</p>
-                <p class="pakke-price">399 kr.</p>
+                <p class="package-price">399 kr.</p>
                 <button class="btn" data-open="designer">Design din pakke</button>
             </div>
 
@@ -53,8 +53,8 @@
 
     </section>
 
-    <section class="klub">
-        <div class="klub-text">
+    <section class="club">
+        <div class="club-text">
             <p class="label">Læseklubben</p>
             <h2>Kom med i krogen</h2>
             <p>Hver måned finder vi tre bøger, vi ikke kan lade være med at anbefale. Læs én af dem og fortæl os, hvad du synes, så får du månedens tryk som tak.</p>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="footer-cols">
-            <div class="footer-kontakt">
+            <div class="footer-contact">
                 <p>© 2026 The Book Nook</p>
 
                 <div class="footer-icons">
@@ -93,15 +93,15 @@
                 </div>
             </div>
 
-            <div class="footer-tegnere">
+            <div class="footer-artists">
                 <p>Vores tegnere:</p>
 
-                <div class="tegner">
+                <div class="artist">
                     <img src="assetsTBN/mia-josefine.webp" alt="">
                     <span>Mia Josefine</span>
                 </div>
 
-                <div class="tegner">
+                <div class="artist">
                     <img src="assetsTBN/maya-faarvang.webp" alt="">
                     <span>Maya Faarvang</span>
                 </div>
@@ -114,48 +114,83 @@
 
         <button class="designer-close" aria-label="Luk">&times;</button>
 
-        <p class="label designer-trin">Trin 1 af 3</p>
+        <div class="designer-steps">
+            <p class="label designer-step">Trin 1 af 3</p>
 
-        <div class="designer-bar">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+            <div class="designer-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-        <h2 class="designer-titel"></h2>
-        <p class="designer-sub"></p>
+            <h2 class="designer-title"></h2>
+            <p class="designer-sub"></p>
 
-        <div class="designer-main">
-            <img class="designer-foto" src="" alt="">
+            <div class="designer-main">
+                <img class="designer-photo" src="" alt="">
 
-            <div class="designer-valgene">
+                <div class="designer-choices">
 
-                <p class="designer-spg">Farve:</p>
+                    <p class="designer-question">Farve:</p>
 
-                <div class="designer-valg" data-valg="farve">
-                    <button class="swatch" data-vaerdi="sand" style="background-color: var(--sand)" aria-label="Sand"></button>
-                    <button class="swatch" data-vaerdi="peri" style="background-color: var(--peri)" aria-label="Peri"></button>
-                    <button class="swatch" data-vaerdi="pink" style="background-color: var(--pink)" aria-label="Pink"></button>
-                </div>
+                    <div class="designer-choice" data-choice="color">
+                        <button class="swatch" data-value="sand" style="background-color: var(--sand)" aria-label="Sand"></button>
+                        <button class="swatch" data-value="peri" style="background-color: var(--peri)" aria-label="Peri"></button>
+                        <button class="swatch" data-value="pink" style="background-color: var(--pink)" aria-label="Pink"></button>
+                    </div>
 
-                <p class="designer-spg">Tegning:</p>
+                    <p class="designer-question">Tegning:</p>
 
-                <div class="designer-valg" data-valg="tegning">
-                    <button class="swatch" data-vaerdi="drage">
-                        <img src="assetsTBN/tegning-drage.webp" alt="Drage">
-                    </button>
-                    <button class="swatch" data-vaerdi="svaerd">
-                        <img src="assetsTBN/tegning-svaerd.webp" alt="Sværd">
-                    </button>
-                    <button class="swatch" data-vaerdi="svamp">
-                        <img src="assetsTBN/tegning-svamp.webp" alt="Svamp">
-                    </button>
+                    <div class="designer-choice" data-choice="motif">
+                        <button class="swatch" data-value="drage">
+                            <img src="assetsTBN/tegning-drage.webp" alt="Drage">
+                        </button>
+                        <button class="swatch" data-value="svaerd">
+                            <img src="assetsTBN/tegning-svaerd.webp" alt="Sværd">
+                        </button>
+                        <button class="swatch" data-value="svamp">
+                            <img src="assetsTBN/tegning-svamp.webp" alt="Svamp">
+                        </button>
 
+                    </div>
                 </div>
             </div>
+
+            <button class="btn designer-next">Næste</button>
         </div>
 
-        <button class="btn designer-naeste">Næste</button>
+        <div class="designer-final" hidden>
+            <h2 class="final-title">Næsten færdig</h2>
+
+            <p>Skriv din mail, så sender vi en bekræftelse – og en besked, når din pakke er klar.</p>
+
+            <form class="email-form">
+                <div class="email-field">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+                        <path d="m3 6 9 6 9-6"/>
+                    </svg>
+
+                    <input type="email" placeholder="din@mail.com" required>
+                </div>
+
+                <button class="btn" type="submit">Send</button>
+            </form>
+
+            <div class="email-thanks" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="m8 12 3 3 5-6"/>
+                </svg>
+
+                <div>
+                    <h3>Tak for din ordre!</h3>
+                    <p>Vi sender dig en mail, når din pakke er klar.</p>
+                </div>
+            </div>
+
+            <p class="final-note">Vi tegner og trykker alt på bestilling, så der går et par uger. Afhentning eller levering aftaler vi på mail.</p>
+        </div>
     </dialog>
 
     <script src="script.js"></script>
