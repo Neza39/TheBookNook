@@ -173,3 +173,31 @@ bookclub.querySelector('.review-form').addEventListener('submit', e => {
     bookclub.querySelector('.bookclub-review').hidden = true;
     bookclub.querySelector('.bookclub-reward').hidden = false;
 });
+
+
+/* ==========================================================
+   SUBSCRIBE
+   ========================================================== */
+
+/* find and name the subscribe popup */
+const subscribe = document.getElementById('subscribe');
+
+/* opening clears the form, then shows the popup */
+document.querySelector('[data-open="subscribe"]').addEventListener('click', () => {
+    subscribe.querySelector('.email-form').hidden = false;
+    subscribe.querySelector('.email-thanks').hidden = true;
+    subscribe.querySelector('input').value = '';
+    subscribe.showModal();
+});
+
+/* the × closes the popup */
+subscribe.querySelector('.subscribe-close').addEventListener('click', () => {
+    subscribe.close();
+});
+
+/* on submit, the thank you box replaces the email field */
+subscribe.querySelector('.email-form').addEventListener('submit', e => {
+    e.preventDefault();
+    subscribe.querySelector('.email-form').hidden = true;
+    subscribe.querySelector('.email-thanks').hidden = false;
+});

@@ -193,6 +193,7 @@ section {
     border: none;
     font-family: inherit;
     cursor: pointer;
+    margin-top: 0.75rem;
     transition: background-color 0.15s;
 }
 
@@ -662,6 +663,79 @@ footer {
 
 
 /* ==========================================================
+   POSTERS
+   ========================================================== */
+
+.poster-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background-color: var(--lilac);
+}
+
+.poster-shot {
+    width: 100%;
+}
+
+.poster-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+}
+
+.poster-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.poster-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   SUBSCRIBE
+   ========================================================== */
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    border: none;
+    padding: 1.5rem;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+}
+
+.subscribe::backdrop {
+    background-color: rgb(88 67 64 / 60%);
+}
+
+.subscribe-close {
+    align-self: flex-start;
+    border: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--text);
+    cursor: pointer;
+}
+
+
+/* ==========================================================
    DESKTOP
    ========================================================== */
 
@@ -749,8 +823,8 @@ footer {
         flex-direction: row;
         align-items: center;
         gap: 4rem;
-        padding-left: max(1.5rem, (100% - 1100px) / 2 + 1.5rem);
-        padding-right: max(1.5rem, (100% - 1100px) / 2 + 1.5rem);
+        padding-left: max(1.5rem, (100% - 1100px) / 2 + 4rem);
+        padding-right: max(1.5rem, (100% - 1100px) / 2 + 4rem);
     }
 
     .club-text {
@@ -809,6 +883,32 @@ footer {
 
     .designer-choice {
         margin-bottom: 1.5rem;
+    }
+
+
+    /* ----------------------- posters ------------------------ */
+
+    .poster-info {
+        padding: 2.5rem;
+    }
+
+    /* same width as the Design din pakke button, not full card width */
+    .poster-info .btn {
+        width: min(478px, 100%);
+        align-self: center;
+    }
+
+
+    /* ---------------------- subscribe ----------------------- */
+
+    .subscribe {
+        width: min(520px, 90vw);
+        height: auto;
+        max-height: 85vh;
+        margin: auto;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: var(--shadow);
     }
 
 

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Book Nook</title>
+
+    <meta name="description" content="Bogmærker, læsehoodies og muleposer til dig, der hellere vil læse. Tegnet i hånden, trykt i små oplag.">
+
     <link rel="icon" href="assetsTBN/logo.webp">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -71,6 +74,27 @@
 
     </section>
 
+
+    <section class="posters">
+        <article class="poster-card">
+            <img class="poster-shot" src="assetsTBN/plakat.webp" alt="Månedens plakat med tre bøger og bogmærker, man kan rive af">
+
+            <div class="poster-info">
+                <div class="poster-text">
+                    <p class="label">Hæng den op</p>
+                    <h2>En ny plakat hver måned</h2>
+
+                    <p>Hver måned får I en plakat med tre bøger, vi synes I skal læse. Ved siden af hver bog sidder et bogmærke, man kan rive af.</p>
+
+                    <p>Nye bøger, nye bogmærker. Når måneden er slut, tegner vi nye.</p>
+
+                    <p class="poster-price">49 kr. om måneden</p>
+                </div>
+
+                <button class="btn" data-open="subscribe">Tilmeld jer</button>
+            </div>
+        </article>
+    </section>
 
     <footer>
 
@@ -287,6 +311,39 @@
             <a class="btn" href="assetsTBN/tryk-september-full.jpg" download="the-book-nook-september.jpg">Hent dit tryk</a>
         </div>
 
+    </dialog>
+
+    <dialog id="subscribe" class="subscribe">
+        <button class="subscribe-close" aria-label="Luk">&times;</button>
+
+        <h2 class="final-title">Tilmeld jer</h2>
+
+        <p>Skriv jeres mail, så kontakter vi jer og aftaler resten.</p>
+
+        <form class="email-form">
+            <div class="email-field">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
+                    <path d="m3 6 9 6 9-6"/>
+                </svg>
+                <input type="email" placeholder="jeres@mail.dk" aria-label="Jeres mail" required>
+            </div>
+
+            <button class="btn" type="submit">Send</button>
+        </form>
+
+        <div class="email-thanks" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m8 12 3 3 5-6"/>
+            </svg>
+            <div>
+                <h3>Tak for jeres interesse!</h3>
+                <p>Vi skriver til jer inden længe.</p>
+            </div>
+        </div>
+
+        <p class="final-note">Første plakat kommer den 1. i næste måned.</p>
     </dialog>
 
     <script src="script.js"></script>
