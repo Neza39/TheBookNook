@@ -68,6 +68,11 @@ img {
     display: none !important;
 }
 
+/* a dialog only shows when it is open */
+dialog:not([open]) {
+    display: none;
+}
+
 section {
     padding: 0 1.5rem;
     margin-bottom: var(--gap);
